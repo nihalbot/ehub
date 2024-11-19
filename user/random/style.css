@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+.logo{
+    font-weight: 700;
+}
+.logo-first{
+    color: blue;
+}
+.sidebar{
+overflow-x: hidden;
+}
+
+nav {
+    overflow-x: hidden;
+    background-color: #fff;
+    
+}
+.main-content{
+    background-color: #F5F6FA;
+    overflow-x: hidden;
+    
+}
+
+.main-content{
+    height: calc(100vh - 56px);
+   
+}
+
+
+
+
+
+
+/* @media (max-width: 600px){
+    .sidebar-section{
+        display: none;
+    }
+} */
+
+.form-container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+.form-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: #fff;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-bottom: 2rem;
+}
+
+.form-profile img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.form-section form input, .form-select{
+    background-color: #F5F6FA;
+}
+
+.btn-add{
+    margin-top: 1.5rem !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 3rem;
+    width: 100%;
+}
+.btn-add button{
+    width: 15rem;
+    height: 3rem;
+}
+
+.table {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.custom-tabel-row{
+    height: 4rem;
+}
+.custom-tabel-header{
+    height: 3rem;
+}
+.custom-tabel-row td, th{
+   vertical-align: middle;
+}
+
+.action-container span{
+    display: flex;
+    width: 5rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid #DADADA;
+    border-radius: .5rem;
+}
+
+.action-container i{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-right: 1rem;
+    padding-left: .5rem;
+   
+}
+.action-container span a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+.action-container span i:nth-child(1) {
+    border-right: 1px solid #DADADA; 
+    padding-right: .7rem; 
+}
+
+.delete-icon{
+    color: #EF3826;
+}
+
+
