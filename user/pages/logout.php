@@ -1,6 +1,8 @@
 <?php
 include '../config/database.php';
-session_unset();  
+include '../includes/logout_message.php';
+$logout = 1;
+session_unset();
 session_destroy(); 
 header("Location: ./signin.php");
 exit(); 

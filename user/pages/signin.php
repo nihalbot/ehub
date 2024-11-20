@@ -1,5 +1,6 @@
 <?php
 include '../includes/auth_start.php';
+include '../includes/logout_message.php';
 ?>
 <title>Signin - We Provides a realtime help</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -58,19 +59,22 @@ include '../includes/auth_start.php';
 
     if (isset($_SESSION['status']) && isset($_SESSION['status']) != '') {
     ?>
-            <script>
-                Swal.fire({
-                    title: "<?php echo $_SESSION['status']; ?>",
-                    icon: "<?php echo $_SESSION['status_code']; ?>",
-                    text: "Email or Password is wrong!"
+        <script>
+            Swal.fire({
+                title: "<?php echo $_SESSION['status']; ?>",
+                icon: "<?php echo $_SESSION['status_code']; ?>",
+                text: "Email or Password is wrong!"
 
-                });
-            </script>
-        
+            });
+        </script>
+
     <?php
         unset($_SESSION['status']);
     }
     ?>
+
+
+   
 </body>
 
 </html>

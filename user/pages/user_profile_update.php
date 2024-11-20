@@ -35,34 +35,34 @@ if ($result) {
             <!-- pofile picture end -->
 
             <!-- main form start -->
-            <form action="./user_update_profile_process.php?id=<?php echo $userId;?>" class="row g-3" method="post">
+            <form action="./user_update_profile_process.php?id=<?php echo $userId; ?>" class="row g-3" method="post">
 
                 <!-- first name -->
 
 
-                <div class="col-lg-6 col-md-12 mt-1 mt-lg-5 mt-md-3">
+                <div class="col-lg-6 col-md-12 mt-1 mt-lg-5 mt-md-3 custom-form-style">
                     <label for="inputEmail4" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="inputEmail4" value="<?php echo $userName; ?>">
+                    <input type="text" class="form-control" id="inputEmail4" value="<?php echo $userName; ?>" name="userName">
                 </div>
 
                 <!-- last name -->
-                <div class="col-md-6 mt-1 mt-lg-5 mt-md-2">
+                <div class="col-md-6 mt-1 mt-lg-5 mt-md-2 custom-form-style">
                     <label for="inputPassword4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputPassword4" value="<?php echo $email; ?>">
+                    <input type="email" class="form-control" id="inputPassword4" value="<?php echo $email; ?>" name="userEmail">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 custom-form-style">
                     <label for="inputEmail4" class="form-label">Date of Birth</label>
-                    <input type="date" class="form-control" id="inputEmail4" value="<?php echo $dob; ?>">
+                    <input type="date" class="form-control" id="inputEmail4" value="<?php echo $dob; ?>" name="dob">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 custom-form-style">
                     <label for="inputPassword4" class="form-label">User Id</label>
                     <input type="text" class="form-control" id="inputPassword4" value="<?php echo $userId; ?>" disabled>
                 </div>
 
                 <div class="col-12 btn-add mt-1 mt-lg-4 mt-md-4">
                     <a href="">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary" name="update">Update</button>
                     </a>
                 </div>
 

@@ -1,4 +1,10 @@
-<?php include '../config/database.php'; ?>
+<?php include '../config/database.php'; 
+
+
+if(!isset($_SESSION['user_name'])){
+    echo "<script>window.location.href='../pages/signin.php';</script>";
+}
+?>
 <!doctype html>
 <html lang="en">
 
