@@ -6,9 +6,9 @@ include '../includes/sidebar.php';
 include '../includes/nav.php';
 ?>
 <?php
-$email = $_SESSION['email'];
+$userId = $_SESSION['user_id'];
 
-$sql = "SELECT * FROM `users` WHERE email = '$email'";
+$sql = "SELECT * FROM `users` WHERE user_id = '$userId'";
 
 $result = mysqli_query($con, $sql);
 
@@ -23,7 +23,7 @@ if ($result) {
 ?>
 <!-- main content start -->
 <div class="container-fluid main-content flex-grow-1 pt-3 ps-3 tabel-cotainer">
-
+    <h3 class="ps-2">Profile</h3>
     <!-- form start -->
     <div class="row form-container">
         <div class="col col-lg-12 col-md-12 form-section">
@@ -48,7 +48,7 @@ if ($result) {
                 <!-- last name -->
                 <div class="col-md-6 mt-1 mt-lg-5 mt-md-2">
                     <label for="inputPassword4" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="inputPassword4" value="<?php echo $email; ?>" disabled>
+                    <input type="text" class="form-control" id="inputPassword4" value="<?php echo $userEmail; ?>" disabled>
                 </div>
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Date of Birth</label>

@@ -141,6 +141,41 @@ nav {
     color: #EF3826;
 }
 
+.dashboard-card .card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 1rem;
+    border: none;
+}
+
+.custom-card{
+    height: 100%;
+    width: 100%;
+}
+.custom-card p{
+    font-size: .9rem;
+margin-bottom: .5rem;
+}
+.custom-card .card-title{
+    color: #636466;
+}
+.custom-card .card-details{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.custom-card .card-navigation{
+    color: #3EC9B4;
+}
+.custom-card .card-icon-container{
+    height: 4rem;
+    width: 4rem;
+    border-radius: .6rem;
+    background-color: #E5E4FF;
+}
+
+.card-icon-container i{
+    font-size: 1.5rem;
+    color: #8280FF;
+}
 
 
 

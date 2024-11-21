@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo 'Email not found!';
             }
         } else {
-            // Debugging: Show SQL error
             die("Query failed: " . mysqli_error($con));
         }
     } else {
