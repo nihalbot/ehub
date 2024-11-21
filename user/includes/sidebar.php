@@ -3,7 +3,7 @@
         <!-- sidebar start -->
         <div class="col col-lg-3 p-0 d-none d-md-block">
             <div class="d-flex flex-column flex-shrink-0 p-3 min-vh-100 sidebar">
-                <a href="../pages/user_panel.php"
+                <a href="../pages/dashboard.php"
                     class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none justify-content-center w-100">
                     <span class="fs-4 logo"><span class="logo-first">E-</span>Hub</span>
                 </a>

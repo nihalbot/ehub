@@ -15,6 +15,7 @@ if($userId){
         $result = mysqli_query($con ,$sql);
 
         if($result){
+            $_SESSION['update_status'] = 'success';
             $_SESSION['status'] = "Profile Updated";
             $_SESSION['status_code'] = 'success';
            

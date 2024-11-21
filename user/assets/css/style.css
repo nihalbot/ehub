@@ -63,9 +63,10 @@ nav {
     justify-content: center;
     border-radius: 1rem;
     background-color: #fff;
-    padding-left: 6rem;
-    padding-right: 6rem;
     padding-bottom: 2rem;
+    display: flex;
+    padding: 1rem 2rem 2rem 2rem;
+
 }
 
 .form-profile img{
