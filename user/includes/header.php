@@ -1,6 +1,6 @@
 <?php include '../config/database.php'; 
 
-
+//cheek user is login or not
 if(!isset($_SESSION['user_name'])){
     echo "<script>window.location.href='../pages/signin.php';</script>";
 }

@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid ">
             <a class="navbar-brand ps-3" href="#">
-                Welcome user
+                <?php echo 'Welcome ' . $_SESSION['user_name']; ?>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"

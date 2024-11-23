@@ -15,28 +15,30 @@
                             Dashboard
                         </a>
                     </li>
+
                     <li>
-                        <a href="#" class="nav-link link-dark" data-link="shelter">
-                            <i class="fa-solid fa-person-shelter me-2"></i>
+                        <a href="../pages/add_user.php" class="nav-link link-dark" data-link="relief">
+                            <i class="fa-solid fa-parachute-box me-2"></i>
+                            Add User
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../pages/see_users.php" class="nav-link link-dark" data-link="profile">
+                            <i class="fa-solid fa-user me-2"></i>
+                            Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../pages/shelter.php" class="nav-link link-dark" data-link="update profile">
+                            <i class="fa-solid fa-id-card me-2"></i>
                             Shelter
                         </a>
                     </li>
+
                     <li>
-                        <a href="#" class="nav-link link-dark" data-link="relief">
-                            <i class="fa-solid fa-parachute-box me-2"></i>
-                            Relief
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../pages/user_profile.php" class="nav-link link-dark" data-link="profile">
-                            <i class="fa-solid fa-user me-2"></i>
-                            Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../pages/user_profile_update.php" class="nav-link link-dark" data-link="update profile">
+                        <a href="../pages/manage_shelters.php" class="nav-link link-dark" data-link="update profile">
                             <i class="fa-solid fa-id-card me-2"></i>
-                            Update Profile
+                            Manage Shelter
                         </a>
                     </li>
                 </ul>
@@ -47,7 +49,7 @@
                         <img src="https://github.com/mdo.png" alt="" width="32" height="32"
                             class="rounded-circle me-2">
                         <strong>
-                            user name
+                            <?php echo $_SESSION['user_name']; ?>
                         </strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">

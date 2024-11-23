@@ -5,8 +5,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+    
+<!-- sweet aleart cdn -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+<!-- update profile success toast -->
 <?php
 if (isset($_SESSION['update_status']) && isset($_SESSION['update_status']) != '') {
 ?>
@@ -36,7 +40,7 @@ if (isset($_SESSION['update_status']) && isset($_SESSION['update_status']) != ''
 }
 ?>
 
-
+<!-- login succesfull toast -->
 <?php
 if (isset($_SESSION['status']) && isset($_SESSION['status']) != '') {
 ?>
@@ -63,6 +67,7 @@ if (isset($_SESSION['status']) && isset($_SESSION['status']) != '') {
 }
 ?>
 
+<!-- script for sidebar toggle -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.nav-link');

@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../includes/auth_start.php';
 ?>
 <title>Sign up - To stay informed and access disaster aid and resources</title>
@@ -27,10 +27,22 @@ include '../includes/auth_start.php';
                         </div>
 
                         <!-- Date of Birth -->
-                        <div class="form-floating custom-form-style mt-3">
-                            <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth" required>
-                            <label for="dob">Date Of Birth</label>
+                        <div class="custom-div d-flex justify-content-between">
+                            <div class="form-floating custom-form-style mt-3 col-lg-5">
+                                <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth" required>
+                                <label for="dob">Date Of Birth</label>
+                            </div>
+                            <div class="col-lg-6 custom-form-style mt-2">
+                                <label for="region" class="form-label m-0">Region</label>
+                                <select id="region" class="form-select" name="region">
+                                    <option selected disabled>Choose...</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Kurigram">Kurigram</option>
+                                    <option value="Feni">Feni</option>
+                                </select>
+                            </div>
                         </div>
+
 
                         <!-- Email -->
                         <div class="form-floating custom-form-style mt-3">

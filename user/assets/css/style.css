@@ -10,6 +10,7 @@
 html, body {
     height: 100%;
     width: 100%;
+    /* overflow: auto; */
     overflow-x: hidden;
 
 }
@@ -31,7 +32,7 @@ nav {
 }
 .main-content{
     background-color: #F5F6FA;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     
 }
 
@@ -45,11 +46,11 @@ nav {
 
 
 
-/* @media (max-width: 600px){
-    .sidebar-section{
-        display: none;
+@media (max-width: 600px){
+    html,body{
+        overflow-x: auto;
     }
-} */
+}
 
 .form-container{
     padding-left: 1rem;
@@ -94,7 +95,7 @@ nav {
 
 .table {
     border-radius: 1rem;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .custom-tabel-row{
@@ -176,6 +177,29 @@ margin-bottom: .5rem;
     font-size: 1.5rem;
     color: #8280FF;
 }
+
+.custom-table-row{
+    height: 4rem;
+}
+.table th, td{
+    vertical-align: middle;
+}
+
+.custom-div{
+   
+
+}
+@media (max-width: 600px){
+    /* html,body{
+        overflow-x: auto;
+    } */
+    .table-data{
+        overflow: auto;
+    }
+}
+
+
+
 
 
 

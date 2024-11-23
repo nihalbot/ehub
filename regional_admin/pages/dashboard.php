@@ -8,7 +8,7 @@ include '../includes/nav.php';
 
 <!-- main content start -->
 <div class="container-fluid main-content flex-grow-1 pt-3 ps-3 tabel-cotainer">
-    <h3 class="">Dashboard</h3>
+    <h3 class="">Welcome regional admin</h3>
 
     <div class="row">
         <div class="col-lg-4 col-sm-6 mb-3 mb-sm-0 dashboard-card">

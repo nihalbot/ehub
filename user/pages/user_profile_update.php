@@ -8,7 +8,7 @@ include '../includes/nav.php';
 <?php
 $userId = $_SESSION['user_id'];
 
-$sql = "SELECT * FROM `users` WHERE user_id = '$userId'";
+$sql = "SELECT * FROM `users` WHERE id = '$userId'";
 
 $result = mysqli_query($con, $sql);
 
@@ -17,7 +17,7 @@ if ($result) {
     $userName = $row['full_name'];
     $userEmail = $row['email'];
     $dob = $row['date_of_birth'];
-    $userId = $row['user_id'];
+    $userId = $row['id'];
 }
 
 

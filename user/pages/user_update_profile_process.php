@@ -10,7 +10,7 @@ if($userId){
         $dob = $_POST['dob'];
 
 
-        $sql = "UPDATE users SET full_name = '$userName', date_of_birth = '$dob', email = '$userEmail' WHERE user_id = '$userId'";
+        $sql = "UPDATE users SET full_name = '$userName', date_of_birth = '$dob', email = '$userEmail' WHERE id = '$userId'";
 
         $result = mysqli_query($con ,$sql);
 

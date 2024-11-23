@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (password_verify($password, $row['password_hash'])) {
                     $_SESSION['user_name'] = $row['full_name'];
                     $_SESSION['email'] = $row['email'];
-                    $_SESSION['user_id'] = $row['user_id'];
+                    $_SESSION['user_id'] = $row['id'];
                     $_SESSION['status'] = "Signed in successfully";
                     $_SESSION['status_code'] = "success";
                     echo "<script>window.location.href='./dashboard.php';</script>";

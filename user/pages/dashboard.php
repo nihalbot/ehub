@@ -17,7 +17,7 @@ if ($result) {
     $userName = $row['full_name'];
     $userEmail = $row['email'];
     $dob = $row['date_of_birth'];
-    $userId = $row['user_id'];
+    $userId = $row['id'];
 }
 
 ?>
