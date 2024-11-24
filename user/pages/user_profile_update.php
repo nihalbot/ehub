@@ -31,7 +31,7 @@ if ($result) {
 
             <!-- pofile picture start -->
             <div class="form-profile mt-2">
-                <img src="../assets/img/model2.jpg" alt="">
+                <img src="../assets/img/profile_pic.jpg" alt="">
             </div>
             <!-- pofile picture end -->
 

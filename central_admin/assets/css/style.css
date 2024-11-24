@@ -50,14 +50,6 @@ nav {
 
 
 
-@media (max-width: 600px){
-    /* html,body{
-        overflow-x: auto;
-    } */
-    .table-data{
-        overflow: auto;
-    }
-}
 
 .form-container{
     padding-left: 1rem;
@@ -102,7 +94,7 @@ nav {
 
 .table {
     border-radius: 1rem;
-    overflow: auto;
+   
 }
 
 .custom-tabel-row{
@@ -193,6 +185,14 @@ margin-bottom: .5rem;
 }
 
 
+@media (max-width: 700px){
+    .table-data{
+        overflow: auto !important;
+    }
+}
+a{
+    text-decoration: none;
+}
 
 
 

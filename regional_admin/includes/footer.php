@@ -90,6 +90,31 @@ if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
 
 ?>
 
+<?php
+if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+?>
+    <script>
+        Swal.fire({
+            title: "<?php echo $_SESSION['status']; ?>",
+            icon: "<?php echo $_SESSION['status_code']; ?>",
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        });
+    </script>
+<?php
+    unset($_SESSION['status']);
+    unset($_SESSION['status_code']);
+}
+
+?>
+
 
 
 

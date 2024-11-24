@@ -10,39 +10,28 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="../pages/dashboard.php" class="nav-link active" aria-current="page" data-link="dashboard_regional">
+                        <a href="../pages/dashboard.php" class="nav-link active" aria-current="page" data-link="dashboard_shelter">
                             <i class="fa-solid fa-house me-2"></i>
                             Dashboard
                         </a>
                     </li>
                     <li>
-                        <a href="../pages/add_user.php" class="nav-link link-dark" data-link="add_user_regional">
-                            <i class="fa-solid fa-user-pen"></i>
-                            Add Users
+                        <a href="../pages/add_user_shelter.php" class="nav-link link-dark" data-link="add_user_shelter">
+                            <i class="fa-solid fa-person-shelter"></i>
+                            Add Users to shelter
                         </a>
                     </li>
-                    <li>
-                        <a href="../pages/see_users.php" class="nav-link link-dark" data-link="users_regional">
-                            <i class="fa-solid fa-user-large"></i>
-                            Users
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../pages/shelter.php" class="nav-link link-dark" data-link="shelter_regional">
-                            <i class="fa-solid fa-users"></i>
 
-                            Shelter
-                        </a>
-                    </li>
+
 
                     <li>
                         <a href="../pages/manage_shelters.php" class="nav-link link-dark" data-link="manage_shelter_regional">
-                            <i class="fa-solid fa-users"></i>
+                            <i class="fa-solid fa-people-roof"></i>
 
                             Manage Shelter
                         </a>
                     </li>
-                     
+
 
                 </ul>
                 <hr>
@@ -56,12 +45,7 @@
                         </strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="../pages/user_profile.php">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        
                         <li><a class="dropdown-item" href="../pages/logout.php">Sign out</a></li>
                     </ul>
                 </div>

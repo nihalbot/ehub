@@ -34,7 +34,21 @@
                             Users
                         </a>
                     </li>
-                    
+                    <li>
+                        <a href="../pages/manage_shelters.php" class="nav-link link-dark" data-link="manage_shelter_central">
+                            <i class="fa-solid fa-person-shelter"></i>
+
+                            Shelters
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../pages/users_at_shelter.php" class="nav-link link-dark" data-link="users_at_shelter_central">
+                            <i class="fa-solid fa-people-roof"></i>
+
+                            Users at Shelters
+                        </a>
+                    </li>
                 </ul>
                 <hr>
                 <div class="dropdown">
@@ -47,12 +61,7 @@
                         </strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="../pages/user_profile.php">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        
                         <li><a class="dropdown-item" href="../pages/logout.php">Sign out</a></li>
                     </ul>
                 </div>

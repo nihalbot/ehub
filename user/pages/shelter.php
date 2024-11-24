@@ -1,11 +1,21 @@
 <?php
 include '../includes/header.php';
-echo '<title>See all shelter</title>';
+echo '<title>Manage Shelters - Regional Admin</title>';
 include '../includes/header2.php';
 include '../includes/sidebar.php';
 include '../includes/nav.php';
 
-$userRegion = $_SESSION['region'];
+
+
+// Validate if the region is set in the session
+if (isset($_SESSION['region'])) {
+    $adminRegion = $_SESSION['region'];
+} else {
+    // Redirect or show an error if the region is not set
+    echo '<p class="text-danger">Region information is missing. Please contact the administrator.</p>';
+    include '../includes/footer.php';
+    exit;
+}
 
 // Pagination setup
 $limit = 5; // Records per page
@@ -14,45 +24,48 @@ $page = max($page, 1); // Ensure page is at least 1
 $offset = ($page - 1) * $limit;
 
 // Fetch total number of shelters for pagination
-$total_sql = "SELECT COUNT(*) AS total FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $userRegion) . "'";
+$total_sql = "SELECT COUNT(*) AS total FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $adminRegion) . "'";
 $total_result = mysqli_query($con, $total_sql);
 $total_row = mysqli_fetch_assoc($total_result);
 $total_records = $total_row['total'];
 $total_pages = ceil($total_records / $limit);
 
 // Fetch shelters for the current page
-$sql = "SELECT * FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $userRegion) . "' 
+$sql = "SELECT * FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $adminRegion) . "' 
         ORDER BY created_at DESC LIMIT $limit OFFSET $offset";
 $result = mysqli_query($con, $sql);
 ?>
 
 <div class="container-fluid main-content flex-grow-1 pt-3 ps-3 tabel-container">
-    <h3>Shelters</h3>
+    <h3>Manage Shelters</h3>
 
     <!-- Display Shelter Table -->
     <div class="tabel-data" style="
-    overflow: auto;">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th class="custom-tabel-header" scope="col">Shelter Id</th>
-                    <th scope="col">Shelter Name</th>
-                    <th class="custom-tabel-header" scope="col">Location</th>
-                    <th class="custom-tabel-header" scope="col">Capacity</th>
-                    <th class="custom-tabel-header" scope="col">Region</th>
-                </tr>
-            </thead>
-            <tbody class="tabel-body">
-                <?php
-                if ($result && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $shelterId = $row['id'];
-                        $shelterName = $row['name'];
-                        $shelterLocation = $row['location'];
-                        $shelterCapacity = $row['capacity'];
-                        $shelterRegion = $row['region'];
+    overflow: auto;"
+>
+        <table class=" table">
+        <thead>
+            <tr>
+                <th class="custom-tabel-header" scope="col">Shelter Id</th>
+                <th scope="col">Shelter Name</th>
+                <th class="custom-tabel-header" scope="col">Location</th>
+                <th class="custom-tabel-header" scope="col">Capacity</th>
+                <th class="custom-tabel-header" scope="col">Region</th>
 
-                        echo '
+            </tr>
+        </thead>
+        <tbody class="tabel-body">
+            <?php
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $shelterId = $row['id'];
+                    $shelterName = $row['name'];
+                    $shelterLocation = $row['location'];
+                    $shelterCapacity = $row['capacity'];
+                    $shelterRegion = $row['region'];
+                    $shelterAdded = $_SESSION['user_name'];
+
+                    echo '
                         <tr class="custom-tabel-row">
                             <th scope="row">' . $shelterId . '</th>
                             <td>' . $shelterName . '</td>
@@ -60,15 +73,15 @@ $result = mysqli_query($con, $sql);
                             <td>' . $shelterCapacity . '</td>
                             <td>' . $shelterRegion . '</td>
                             
-                            
+                          
                         </tr>
                         ';
-                    }
-                } else {
-                    echo '<tr><td colspan="7" class="text-center">No shelters found for this region.</td></tr>';
                 }
-                ?>
-            </tbody>
+            } else {
+                echo '<tr><td colspan="7" class="text-center">No shelters found for this region.</td></tr>';
+            }
+            ?>
+        </tbody>
         </table>
     </div>
 

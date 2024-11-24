@@ -15,6 +15,10 @@ html, body {
 
 }
 
+body a{
+    text-decoration: none;
+}
+
 .logo{
     font-weight: 700;
 }
@@ -47,8 +51,11 @@ nav {
 
 
 @media (max-width: 600px){
-    html,body{
+    /* html,body{
         overflow-x: auto;
+    } */
+    .tabel-data{
+        overflow: auto !important;
     }
 }
 
@@ -107,6 +114,7 @@ nav {
 .custom-tabel-row td, th{
    vertical-align: middle;
 }
+
 
 .action-container span{
     display: flex;
@@ -183,19 +191,6 @@ margin-bottom: .5rem;
 }
 .table th, td{
     vertical-align: middle;
-}
-
-.custom-div{
-   
-
-}
-@media (max-width: 600px){
-    /* html,body{
-        overflow-x: auto;
-    } */
-    .table-data{
-        overflow: auto;
-    }
 }
 
 

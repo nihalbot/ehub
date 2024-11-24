@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<script>window.location.href='./signin.php';</script>";
                 }
             } else {
-                $_SESSION['status'] = "Please provide both email and password";
+                $_SESSION['status'] = "User not found";
                 $_SESSION['status_code'] = "warning";
                 echo "<script>window.location.href='./signin.php';</script>";
             }

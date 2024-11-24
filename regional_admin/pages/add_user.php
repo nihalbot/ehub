@@ -1,4 +1,5 @@
 <?php
+
 include '../includes/header.php';
 echo '<title>Create User - Regional Admin</title>';
 include '../includes/header2.php';
@@ -8,14 +9,14 @@ include '../includes/nav.php';
 
 <!-- main content start -->
 <div class="container-fluid main-content flex-grow-1 pt-3 ps-3 tabel-cotainer">
-    <h3 class="ps-2">Create an User</h3>
+    <h3 class="ps-2">Create a User</h3>
     <!-- form start -->
     <div class="row form-container">
         <div class="col col-lg-12 col-md-12 form-section">
 
             <!-- profile picture start -->
             <div class="form-profile mt-2">
-                <img src="../assets/img/profile_pic.jpg">
+                <img src="../assets/img/profile_pic.jpg" alt="Profile Picture">
             </div>
             <!-- profile picture end -->
 
@@ -46,22 +47,20 @@ include '../includes/nav.php';
                     <input type="text" class="form-control" id="phone" name="phone" required>
                 </div>
 
-
                 <!-- Role -->
                 <div class="col-md-6 custom-form-style">
                     <label for="role" class="form-label">Role</label>
                     <select id="role" class="form-select" name="role" required>
                         <option selected disabled>Choose...</option>
                         <option>Normal User</option>
-
                     </select>
                 </div>
-
 
                 <!-- Region -->
                 <div class="col-md-6 custom-form-style">
                     <label for="region" class="form-label">Region</label>
-                    <select id="region" class="form-select" name="region">
+                    <select id="region" class="form-select" name="region" required>
+                        
                         <option selected value="<?php echo $_SESSION['region']; ?>"><?php echo $_SESSION['region']; ?></option>
                     </select>
                 </div>

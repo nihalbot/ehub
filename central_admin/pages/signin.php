@@ -2,6 +2,8 @@
 include '../includes/auth_start.php';
 ?>
 <title>Signin - We Provides a realtime help</title>
+<link rel="icon" href="../assets/img/site_logo.jpg">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="../assets/css/signin.css">
@@ -13,7 +15,9 @@ include '../includes/auth_start.php';
             <div class="col col-lg-5 col-md-12 left-section">
                 <div class="logo p-1 ps-md-5 ps-lg-5">
 
-                    <h2>E-<span style="color: blue;">HUB</span></h2>
+                    <a href="/ehub/index.php">
+                        <h2>E-<span style="color: blue;">HUB</span></h2>
+                    </a>
                 </div>
 
                 <div class="form p-3 p-md-1 p-lg-5">
@@ -32,10 +36,10 @@ include '../includes/auth_start.php';
 
                         <div class="boder-section mt-4">
                             <div class="left-border"></div>
-                            
+
                             <div class="left-border"></div>
                         </div>
-                       
+
                     </form>
 
                 </div>
@@ -59,8 +63,8 @@ include '../includes/auth_start.php';
         <script>
             Swal.fire({
                 title: "<?php echo $_SESSION['status']; ?>",
-                icon: "<?php echo $_SESSION['status_code']; ?>",
-                text: "Email or Password is wrong!"
+                icon: "<?php echo $_SESSION['status_code']; ?>"
+
 
             });
         </script>
@@ -71,7 +75,7 @@ include '../includes/auth_start.php';
     ?>
 
 
-   
+
 </body>
 
 </html>

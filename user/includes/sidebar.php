@@ -16,17 +16,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link link-dark" data-link="shelter">
+                        <a href="../pages/shelter.php" class="nav-link link-dark" data-link="shelter">
                             <i class="fa-solid fa-person-shelter me-2"></i>
                             Shelter
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link link-dark" data-link="relief">
-                            <i class="fa-solid fa-parachute-box me-2"></i>
-                            Relief
-                        </a>
-                    </li>
+                    
                     <li>
                         <a href="../pages/user_profile.php" class="nav-link link-dark" data-link="profile">
                             <i class="fa-solid fa-user me-2"></i>
@@ -44,19 +39,14 @@
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                         id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32"
+                        <img src="../assets/img/profile_pic.jpg" alt="" width="32" height="32"
                             class="rounded-circle me-2">
                         <strong><?php
                                 echo $_SESSION['user_name']
                                 ?></strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="../pages/user_profile.php">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        
                         <li><a class="dropdown-item" href="../pages/logout.php">Sign out</a></li>
                     </ul>
                 </div>

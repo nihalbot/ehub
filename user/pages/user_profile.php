@@ -18,6 +18,8 @@ if ($result) {
     $userEmail = $row['email'];
     $dob = $row['date_of_birth'];
     $userId = $row['id'];
+    $userPhone = $row['phone_number'];
+    $userRegion = $row['region'];
 }
 
 ?>
@@ -30,7 +32,7 @@ if ($result) {
 
             <!-- pofile picture start -->
             <div class="form-profile mt-2">
-                <img src="../assets/img/model2.jpg" alt="">
+                <img src="../assets/img/profile_pic.jpg" alt="">
             </div>
             <!-- pofile picture end -->
 
@@ -54,6 +56,12 @@ if ($result) {
                     <label for="inputEmail4" class="form-label">Date of Birth</label>
                     <input type="text" class="form-control" id="inputEmail4" value="<?php echo $dob; ?>" disabled>
                 </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Region</label>
+                    <input type="text" class="form-control" id="inputPassword4" value="<?php echo $userRegion; ?>" disabled>
+                </div>
+
+                
 
                 <div class="col-md-6">
                     <label for="inputPassword4" class="form-label">User Id</label>

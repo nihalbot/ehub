@@ -1,6 +1,6 @@
 <script>
     document.getElementById('updateBtn').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault(); 
 
         Swal.fire({
             title: "Are you sure?",
@@ -12,7 +12,6 @@
             confirmButtonText: "Yes, update it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                // Submit the form if confirmed
                 document.getElementById('updateForm').submit();
             }
         });

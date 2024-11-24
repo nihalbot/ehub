@@ -36,7 +36,9 @@ include '../includes/auth_start.php';
                             <div class="left-border"></div>
                         </div>
                         <div class="create-account mt-3 d-flex justify-content-center">
-                            <p>Need an account? <span>Create one</span></p>
+                            <a href="../pages/signup.php">
+                                <p>Need an account? <span>Create one</span></p>
+                            </a>
                         </div>
                     </form>
 
@@ -73,7 +75,7 @@ include '../includes/auth_start.php';
     ?>
 
 
-   
+
 </body>
 
 </html>

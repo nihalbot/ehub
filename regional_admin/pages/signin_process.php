@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['user_name'] = $row['full_name'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['user_id'] = $row['id'];
-                    $_SESSION['role'] = $row['role']; // Ensure the role is set correctly
+                    $_SESSION['role'] = $row['role'];
+                    $_SESSION['region'] = $row['region'];
                     $_SESSION['status'] = "Signed in successfully";
                     $_SESSION['status_code'] = "success";
 
-                    // Redirect based on role
                     if ($row['role'] === "Regional Admin") {
                         echo "<script>window.location.href='./dashboard.php';</script>";
                     } else {

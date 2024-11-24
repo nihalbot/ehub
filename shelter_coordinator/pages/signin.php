@@ -13,7 +13,9 @@ include '../includes/auth_start.php';
             <div class="col col-lg-5 col-md-12 left-section">
                 <div class="logo p-1 ps-md-5 ps-lg-5">
 
-                    <h2>E-<span style="color: blue;">HUB</span></h2>
+                    <a href="/ehub/index.php">
+                        <h2>E-<span style="color: blue;">HUB</span></h2>
+                    </a>
                 </div>
 
                 <div class="form p-3 p-md-1 p-lg-5">
@@ -73,7 +75,7 @@ include '../includes/auth_start.php';
     ?>
 
 
-   
+
 </body>
 
 </html>

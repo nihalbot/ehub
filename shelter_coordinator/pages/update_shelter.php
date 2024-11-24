@@ -11,7 +11,7 @@ if ($_SESSION['role'] !== 'Regional Admin') {
     exit;
 }
 
-$_SESSION['test'] = 'hi';
+
 $regionaladminId = $_SESSION['user_id'];
 $adminRegion = $_SESSION['region'];
 $sherterId = $_GET['id'];

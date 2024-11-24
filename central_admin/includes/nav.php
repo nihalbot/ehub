@@ -19,12 +19,21 @@
                         <a class="nav-link" href="../pages/add_user.php">Add Admin</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="../pages/add_user.php">Add User</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="../pages/see_users.php">See users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/shelter.php">Shelter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/users_at_shelter.php">User at Shelter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/logout.php">Logout</a>
                     </li>
-                   
+
                 </ul>
             </div>
         </div>

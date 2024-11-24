@@ -5,27 +5,23 @@ include '../includes/header2.php';
 include '../includes/sidebar.php';
 include '../includes/nav.php';
 
-
-
-$regionaladminId = $_SESSION['user_id'];
-$adminRegion = $_SESSION['region'];
-
 // Pagination setup
-$limit = 5; // Records per page
+$limit = 5;
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$page = max($page, 1); // Ensure page is at least 1
+$page = max($page, 1);
 $offset = ($page - 1) * $limit;
 
-// Fetch total number of shelters for pagination
-$total_sql = "SELECT COUNT(*) AS total FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $adminRegion) . "'";
+$total_sql = "SELECT COUNT(*) AS total FROM shelters";
 $total_result = mysqli_query($con, $total_sql);
 $total_row = mysqli_fetch_assoc($total_result);
 $total_records = $total_row['total'];
 $total_pages = ceil($total_records / $limit);
 
-// Fetch shelters for the current page
-$sql = "SELECT * FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $adminRegion) . "' 
-        ORDER BY created_at DESC LIMIT $limit OFFSET $offset";
+
+$sql = "SELECT shelters.*, users.full_name AS added_by 
+        FROM shelters 
+        LEFT JOIN users ON shelters.regional_admin_id = users.id
+        ORDER BY shelters.created_at DESC LIMIT $limit OFFSET $offset";
 $result = mysqli_query($con, $sql);
 ?>
 
@@ -33,7 +29,7 @@ $result = mysqli_query($con, $sql);
     <h3>Manage Shelters</h3>
 
     <!-- Display Shelter Table -->
-    <div class="tabel-data">
+    <div class="table-data">
         <table class="table">
             <thead>
                 <tr>
@@ -43,11 +39,12 @@ $result = mysqli_query($con, $sql);
                     <th class="custom-tabel-header" scope="col">Capacity</th>
                     <th class="custom-tabel-header" scope="col">Region</th>
                     <th class="custom-tabel-header" scope="col">Added by</th>
-                    <th class="custom-tabel-header" scope="col">Action</th>
+
                 </tr>
             </thead>
             <tbody class="tabel-body">
                 <?php
+                // Check if any data exists
                 if ($result && mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $shelterId = $row['id'];
@@ -55,7 +52,7 @@ $result = mysqli_query($con, $sql);
                         $shelterLocation = $row['location'];
                         $shelterCapacity = $row['capacity'];
                         $shelterRegion = $row['region'];
-                        $shelterAdded = $_SESSION['user_name'];
+                        $shelterAddedBy = $row['added_by'];
 
                         echo '
                         <tr class="custom-tabel-row">
@@ -64,22 +61,13 @@ $result = mysqli_query($con, $sql);
                             <td>' . $shelterLocation . '</td>
                             <td>' . $shelterCapacity . '</td>
                             <td>' . $shelterRegion . '</td>
-                            <td>' . $shelterAdded . '</td>
-                            <td class="action-container">
-                                <span>
-                                    <a href="../pages/update_shelter.php?id=' . $shelterId . '">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                     <a href="javascript:void(0);" onclick="confirmDeleteshelter(' . $shelterId . ')">
-                                        <i class="fa-solid fa-trash delete-icon"></i>
-                                    </a>
-                                </span>
-                            </td>
+                            <td>' . ($shelterAddedBy ? $shelterAddedBy : 'Unknown') . '</td>
+                           
                         </tr>
                         ';
                     }
                 } else {
-                    echo '<tr><td colspan="7" class="text-center">No shelters found for this region.</td></tr>';
+                    echo '<tr><td colspan="7" class="text-center">No shelters found.</td></tr>';
                 }
                 ?>
             </tbody>

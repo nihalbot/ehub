@@ -60,11 +60,7 @@ if ($result) {
                     <input type="email" class="form-control" id="email" name="email" value="<?php echo $userEmail; ?>" required>
                 </div>
 
-                <!-- Password -->
-                <div class="col-md-6 custom-form-style">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="password" name="password" value="<?php echo $userPassword; ?>" required>
-                </div>
+            
 
                 <!-- Phone -->
                 <div class="col-md-6 custom-form-style">
@@ -99,7 +95,7 @@ if ($result) {
 
                 <!-- Submit Button -->
                 <div class="col-12 btn-add mt-1 mt-lg-4 mt-md-4">
-                    <button type="button" class="btn btn-primary" id="updateBtn">Update</button>
+                    <button type="submit" class="btn btn-primary" id="submit" >Update</button>
                 </div>
 
             </form>

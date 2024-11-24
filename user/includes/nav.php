@@ -22,16 +22,17 @@
                         <a class="nav-link active" aria-current="page" href="../pages/dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shelter</a>
+                        <a class="nav-link" href="../pages/shelter.php">Shelter</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Relief</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/user_profile.php">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/user_profile_update.php">Update Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/logout.php">Logout</a>
                     </li>
                 </ul>
             </div>

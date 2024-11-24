@@ -1,122 +1,54 @@
 <?php
-include '../includes/header.php';
-echo '<title>Manage Shelters - Regional Admin</title>';
-include '../includes/header2.php';
-include '../includes/sidebar.php';
-include '../includes/nav.php';
+include '../config/database.php';
 
-// Ensure the user is a Shelter Coordinator
-if ($_SESSION['role'] !== 'Shelter Coordinator') {
-    header('Location: signin.php');
-    exit;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+        $email = mysqli_real_escape_string($con, trim($_POST['email']));
+        $password = trim($_POST['password']);
 
-// Validate if the region is set in the session
-if (isset($_SESSION['region'])) {
-    $adminRegion = $_SESSION['region'];
-} else {
-    // Redirect or show an error if the region is not set
-    echo '<p class="text-danger">Region information is missing. Please contact the administrator.</p>';
-    include '../includes/footer.php';
-    exit;
-}
+        // Fetch user by email
+        $sql = "SELECT * FROM `users` WHERE email = '$email'";
+        $result = mysqli_query($con, $sql);
 
-// Pagination setup
-$limit = 5; // Records per page
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$page = max($page, 1); // Ensure page is at least 1
-$offset = ($page - 1) * $limit;
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
 
-// Fetch total number of shelters for pagination
-$total_sql = "SELECT COUNT(*) AS total FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $adminRegion) . "'";
-$total_result = mysqli_query($con, $total_sql);
-$total_row = mysqli_fetch_assoc($total_result);
-$total_records = $total_row['total'];
-$total_pages = ceil($total_records / $limit);
+                // Verify password
+                if (password_verify($password, $row['password_hash'])) {
+                    // Set session variables
+                    $_SESSION['user_name'] = $row['full_name'];
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['user_id'] = $row['id'];
+                    $_SESSION['role'] = $row['role']; // Ensure the role is set correctly
+                    $_SESSION['status'] = "Signed in successfully";
+                    $_SESSION['status_code'] = "success";
 
-// Fetch shelters for the current page
-$sql = "SELECT * FROM shelters WHERE region = '" . mysqli_real_escape_string($con, $adminRegion) . "' 
-        ORDER BY created_at DESC LIMIT $limit OFFSET $offset";
-$result = mysqli_query($con, $sql);
-?>
-
-<div class="container-fluid main-content flex-grow-1 pt-3 ps-3 tabel-container">
-    <h3>Manage Shelters</h3>
-
-    <!-- Display Shelter Table -->
-    <div class="tabel-data">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th class="custom-tabel-header" scope="col">Shelter Id</th>
-                    <th scope="col">Shelter Name</th>
-                    <th class="custom-tabel-header" scope="col">Location</th>
-                    <th class="custom-tabel-header" scope="col">Capacity</th>
-                    <th class="custom-tabel-header" scope="col">Region</th>
-                    <th class="custom-tabel-header" scope="col">Added by</th>
-                    <th class="custom-tabel-header" scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody class="tabel-body">
-                <?php
-                if ($result && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $shelterId = $row['id'];
-                        $shelterName = $row['name'];
-                        $shelterLocation = $row['location'];
-                        $shelterCapacity = $row['capacity'];
-                        $shelterRegion = $row['region'];
-                        $shelterAdded = $_SESSION['user_name'];
-
-                        echo '
-                        <tr class="custom-tabel-row">
-                            <th scope="row">' . $shelterId . '</th>
-                            <td>' . $shelterName . '</td>
-                            <td>' . $shelterLocation . '</td>
-                            <td>' . $shelterCapacity . '</td>
-                            <td>' . $shelterRegion . '</td>
-                            <td>' . $shelterAdded . '</td>
-                            <td class="action-container">
-                                <span>
-                                    <a href="../pages/update_shelter.php?id=' . $shelterId . '">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                     <a href="javascript:void(0);" onclick="confirmDelete(' . $shelterId . ')">
-                                        <i class="fa-solid fa-trash delete-icon"></i>
-                                    </a>
-                                </span>
-                            </td>
-                        </tr>
-                        ';
+                    // Redirect based on role
+                    if ($row['role'] === "Shelter Coordinator") {
+                       $_SESSION['region'] = $row['region'];
+                        echo "<script>window.location.href='./dashboard.php';</script>";
+                    } else {
+                        $_SESSION['status'] = "Login unsuccessful: Invalid role.";
+                        $_SESSION['status_code'] = "error";
+                        echo "<script>window.location.href='./signin.php';</script>";
                     }
                 } else {
-                    echo '<tr><td colspan="7" class="text-center">No shelters found for this region.</td></tr>';
+                    $_SESSION['status'] = "Incorrect password.";
+                    $_SESSION['status_code'] = "error";
+                    echo "<script>window.location.href='./signin.php';</script>";
                 }
-                ?>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Pagination Links -->
-    <nav>
-        <ul class="pagination justify-content-center align-items-center">
-            <?php if ($page > 1): ?>
-                <li class="page-item">
-                    <a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a>
-                </li>
-            <?php endif; ?>
-            <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                <li class="page-item <?php echo $i === $page ? 'active' : ''; ?>">
-                    <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                </li>
-            <?php endfor; ?>
-            <?php if ($page < $total_pages): ?>
-                <li class="page-item">
-                    <a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a>
-                </li>
-            <?php endif; ?>
-        </ul>
-    </nav>
-</div>
-
-<?php include '../includes/footer.php'; ?>
+            } else {
+                $_SESSION['status'] = "Email not found!";
+                $_SESSION['status_code'] = "error";
+                echo "<script>window.location.href='./signin.php';</script>";
+            }
+        } else {
+            die("Query failed: " . mysqli_error($con));
+        }
+    } else {
+        $_SESSION['status'] = "Please provide both email and password!";
+        $_SESSION['status_code'] = "error";
+        echo "<script>window.location.href='./signin.php';</script>";
+    }
+}

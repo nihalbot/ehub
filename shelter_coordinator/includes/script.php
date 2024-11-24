@@ -40,7 +40,7 @@
 
 
 <script>
-    function confirmDeleteshelter(userId) {
+    function confirmDeleteshelteruser(userId) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -52,6 +52,24 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = '../pages/shelter_delete.php?id=' + userId;
+            }
+        });
+    }
+</script>
+
+<script>
+    function confirmDeleteshelteruser(shelterId, userId) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '../pages/remove_user_from_shelter.php?shelter_id=' + shelterId + '&user_id=' + userId;
             }
         });
     }
