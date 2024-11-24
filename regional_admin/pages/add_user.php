@@ -1,6 +1,6 @@
 <?php
 include '../includes/header.php';
-echo '<title>Create User</title>';
+echo '<title>Create User - Regional Admin</title>';
 include '../includes/header2.php';
 include '../includes/sidebar.php';
 include '../includes/nav.php';
@@ -15,7 +15,7 @@ include '../includes/nav.php';
 
             <!-- profile picture start -->
             <div class="form-profile mt-2">
-                <img src="../assets/img/model2.jpg" alt="Profile Picture">
+                <img src="../assets/img/profile_pic.jpg">
             </div>
             <!-- profile picture end -->
 
@@ -62,10 +62,7 @@ include '../includes/nav.php';
                 <div class="col-md-6 custom-form-style">
                     <label for="region" class="form-label">Region</label>
                     <select id="region" class="form-select" name="region">
-                        <option selected disabled>Choose...</option>
-                        <option value="Rangpur">Rangpur</option>
-                        <option value="Kurigram">Kurigram</option>
-                        <option value="Feni">Feni</option>
+                        <option selected value="<?php echo $_SESSION['region']; ?>"><?php echo $_SESSION['region']; ?></option>
                     </select>
                 </div>
 

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['fill_all_field'] = "All fields are required. Please fill in all the fields.";
         $_SESSION['status'] = "All fields are required. Please fill in all the fields.";
         $_SESSION['status_code'] = "error";
-        echo "<script>window.location.href='./add_admin.php';</script>";
+        echo "<script>window.location.href='./see_users.php';</script>";
         exit();
     }
 
@@ -23,14 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO users(full_name, email, password_hash, role, phone_number, region) VALUES('$userName', '$userEmail', '$hashedPassword', '$userRole', '$userPhone', '$region')";
 
     if (mysqli_query($con, $sql)) {
-        $_SESSION['admin_create_succes'] = "Admin created successfuly.";
-        $_SESSION['status'] = "Admin created successfuly.";
+        $_SESSION['status'] = "User created successfuly.";
         $_SESSION['status_code'] = "success";
-        echo "<script>window.location.href='./add_admin.php';</script>";
+        echo "<script>window.location.href='./see_users.php';</script>";
     } else {
-        $_SESSION['admin_create_fail'] = "Failed to create admin. Please try again.";
-        $_SESSION['status'] = "Failed to create admin. Please try again.";
+        $_SESSION['status'] = "Failed to create user. Please try again.";
         $_SESSION['status_code'] = "error";
-        echo "<script>window.location.href='./add_admin.php';</script>";
+        echo "<script>window.location.href='./see_users.php';</script>";
     }
 }

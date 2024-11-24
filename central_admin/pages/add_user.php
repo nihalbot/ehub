@@ -15,7 +15,7 @@ include '../includes/nav.php';
 
             <!-- profile picture start -->
             <div class="form-profile mt-2">
-                <img src="../assets/img/model2.jpg" alt="Profile Picture">
+                <img src="../assets/img/profile_pic.jpg">
             </div>
             <!-- profile picture end -->
 

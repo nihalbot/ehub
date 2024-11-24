@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['user_name'] = $row['full_name'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['user_id'] = $row['id'];
+                    $_SESSION['region'] = $row['region'];
                     $_SESSION['status'] = "Signed in successfully";
                     $_SESSION['status_code'] = "success";
                     echo "<script>window.location.href='./dashboard.php';</script>";

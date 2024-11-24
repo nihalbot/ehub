@@ -54,7 +54,7 @@ nav {
     /* html,body{
         overflow-x: auto;
     } */
-    .table-data{
+    .tabel-data{
         overflow: auto;
     }
 }
@@ -114,6 +114,7 @@ nav {
 .custom-tabel-row td, th{
    vertical-align: middle;
 }
+
 
 .action-container span{
     display: flex;

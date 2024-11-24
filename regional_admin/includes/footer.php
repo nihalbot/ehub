@@ -7,8 +7,6 @@
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.nav-link');
@@ -40,32 +38,58 @@
     });
 </script>
 
-<!--success message toast-->
-
-    <?php
-    if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
-    ?>
-        <script>
-            Swal.fire({
-                title: "<?php echo $_SESSION['status']; ?>",
-                icon: "<?php echo $_SESSION['status_code']; ?>",
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer);
-                    toast.addEventListener('mouseleave', Swal.resumeTimer);
-                }
-            });
-        </script>
+<!-- update toast -->
 <?php
-        unset($_SESSION['status']);
-        unset($_SESSION['status_code']);
-        unset($_SESSION['admin_create_succes']);
-    }
+if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
 ?>
+    <script>
+        Swal.fire({
+            title: "<?php echo $_SESSION['status']; ?>",
+            icon: "<?php echo $_SESSION['status_code']; ?>",
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        });
+    </script>
+<?php
+    unset($_SESSION['status']);
+    unset($_SESSION['status_code']);
+}
+
+?>
+
+<!-- delete toast -->
+<?php
+if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
+?>
+    <script>
+        Swal.fire({
+            title: "<?php echo $_SESSION['status']; ?>",
+            icon: "<?php echo $_SESSION['status_code']; ?>",
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer);
+            }
+        });
+    </script>
+<?php
+    unset($_SESSION['status']);
+    unset($_SESSION['status_code']);
+}
+
+?>
+
 
 
 
@@ -100,7 +124,7 @@ if (isset($_SESSION['fill_all_field']) && isset($_SESSION['fill_all_field']) != 
 ?>
 
 
-<?php 
+<?php
 include '../includes/script.php';
 ?>
 

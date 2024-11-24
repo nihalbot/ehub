@@ -13,56 +13,58 @@ if ($_SESSION['role'] !== 'Regional Admin') {
 
 $regionalAdminId = $_SESSION['user_id'];
 $adminRegion = $_SESSION['region'];
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $shelterName = $_POST['shelter_name'];
-    $location = $_POST['location'];
-    $capacity = $_POST['capacity'];
-
-    // Insert shelter into the database
-    $insertQuery = "INSERT INTO shelters (name, location, capacity, region, regional_admin_id) 
-                    VALUES ('" . mysqli_real_escape_string($con, $shelterName) . "', 
-                            '" . mysqli_real_escape_string($con, $location) . "', 
-                            " . mysqli_real_escape_string($con, $capacity) . ", 
-                            '" . mysqli_real_escape_string($con, $adminRegion) . "', 
-                            " . mysqli_real_escape_string($con, $regionalAdminId) . ")";
-
-    if (mysqli_query($con, $insertQuery)) {
-        $_SESSION['status'] = "Shelter added successfully!";
-        $_SESSION['status_code'] = "success";
-         echo "<script>window.location.href='./manage_shelters.php';</script>";
-    } else {
-        $_SESSION['status'] = "Error adding shelter!";
-        $_SESSION['status_code'] = "error";
-    }
-}
 ?>
 
 <div class="container-fluid main-content flex-grow-1 pt-3 ps-3 tabel-container">
     <h3>Add Shelter</h3>
 
     <!-- Shelter Add Form -->
-    <form method="POST" class="mb-3">
-        <div class="row">
-            <div class="col-md-4">
-                <label for="shelter_name">Shelter Name</label>
-                <input type="text" name="shelter_name" class="form-control" required>
-            </div>
-            <div class="col-md-4">
-                <label for="location">Location</label>
-                <input type="text" name="location" class="form-control" required>
-            </div>
-            <div class="col-md-4">
-                <label for="capacity">Capacity</label>
-                <input type="number" name="capacity" class="form-control" required>
-            </div>
-            <input type="hidden" name="region" value="<?php echo $adminRegion; ?>">
+    <div class="row form-container">
+        <div class="col col-lg-12 col-md-12 form-section">
 
-            <div class="col-md-12 mt-3">
-                <button type="submit" class="btn btn-primary">Add Shelter</button>
-            </div>
+            <!-- main form start -->
+            <form action="./shelter_add_process.php" class="row g-3" method="post">
+
+                <!-- first name -->
+
+                <div class="col-lg-6 col-md-12 mt-1 mt-lg-5 mt-md-1">
+                    <label for="inputEmail4" class="form-label">Shelter Name</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="shelter_name" required>
+                </div>
+
+                <!-- last name -->
+                <div class="col-md-6 mt-1 mt-lg-5 mt-md-2">
+                    <label for="inputPassword4" class="form-label">Shelter Localtion</label>
+                    <input type="text" class="form-control" id="inputPassword4" name="shelter_location" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Capacity</label>
+                    <input type="number" class="form-control" id="inputEmail4" name="capacity" min="1" required>
+
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Region</label>
+                    <input type="text" class="form-control" id="inputPassword4" value="<?php echo $adminRegion ?>" disabled>
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Regional Admin ID</label>
+                    <input type="text" class="form-control" id="inputCity" value="<?php echo $regionalAdminId; ?>" disabled>
+                </div>
+
+
+
+                <div class="col-12 btn-add mt-1 mt-lg-4 mt-md-4">
+                    <button type="submit" class="btn btn-primary">Add Shelter</button>
+                </div>
+            </form>
+            <!-- main form end -->
+
         </div>
-    </form>
+    </div>
 </div>
 
 <?php include '../includes/footer.php'; ?>

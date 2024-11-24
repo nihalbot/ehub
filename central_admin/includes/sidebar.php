@@ -10,25 +10,25 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="../pages/dashboard.php" class="nav-link active" aria-current="page" data-link="dashboard">
+                        <a href="../pages/dashboard.php" class="nav-link active" aria-current="page" data-link="dashboard_central">
                             <i class="fa-solid fa-house me-2"></i>
                             Dashboard
                         </a>
                     </li>
                     <li>
-                        <a href="../pages/add_admin.php" class="nav-link link-dark" data-link="shelter">
+                        <a href="../pages/add_admin.php" class="nav-link link-dark" data-link="add_admin">
                             <i class="fa-solid fa-user-pen"></i>
                             Add admin
                         </a>
                     </li>
                     <li>
-                        <a href="../pages/add_user.php" class="nav-link link-dark" data-link="relief">
+                        <a href="../pages/add_user.php" class="nav-link link-dark" data-link="add_user_central">
                             <i class="fa-solid fa-user-large"></i>
                             Add User
                         </a>
                     </li>
                     <li>
-                        <a href="../pages/see_users.php" class="nav-link link-dark" data-link="profile">
+                        <a href="../pages/see_users.php" class="nav-link link-dark" data-link="see_user_central">
                             <i class="fa-solid fa-users"></i>
 
                             Users
@@ -40,7 +40,7 @@
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                         id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32"
+                        <img src="../assets/img/profile_pic.jpg" alt="" width="32" height="32"
                             class="rounded-circle me-2">
                         <strong>
                             <?php echo $_SESSION['user_name']; ?>
