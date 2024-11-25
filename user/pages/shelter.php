@@ -37,7 +37,7 @@ $result = mysqli_query($con, $sql);
 ?>
 
 <div class="container-fluid main-content flex-grow-1 pt-3 ps-3 tabel-container">
-    <h3>Manage Shelters</h3>
+    <h3>Shelters</h3>
 
     <!-- Display Shelter Table -->
     <div class="tabel-data" style="

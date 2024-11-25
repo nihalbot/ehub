@@ -34,12 +34,10 @@ include '../includes/auth_start.php';
 
                         <div class="boder-section mt-4">
                             <div class="left-border"></div>
-                            <p>or</p>
+                            
                             <div class="left-border"></div>
                         </div>
-                        <div class="create-account mt-3 d-flex justify-content-center">
-                            <p>Need an account? <span>Create one</span></p>
-                        </div>
+                        
                     </form>
 
                 </div>

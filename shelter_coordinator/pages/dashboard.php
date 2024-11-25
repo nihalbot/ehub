@@ -1,6 +1,6 @@
 <?php
 include '../includes/header.php';
-echo '<title>Dashboard - Regional Admin</title>';
+echo '<title>Dashboard - Shelter Coordinator</title>';
 include '../includes/header2.php';
 include '../includes/sidebar.php';
 include '../includes/nav.php';
@@ -19,7 +19,9 @@ include '../includes/nav.php';
                             <p class="card-title">Shelter in your area</p>
                             <p class="card-details">5</p>
                             <p class="card-navigation">
-                                <span><i class="fa-solid fa-location-dot me-2"></i></span> See all
+                                <a href="./manage_shelters.php">
+                                    <span><i class="fa-solid fa-location-dot me-2"></i></span> See all
+                                </a>
                             </p>
                         </div>
                         <div class="col-lg-5 col-md-5 col-4 d-flex justify-content-end p-0">
@@ -38,11 +40,13 @@ include '../includes/nav.php';
                 <div class="card-body">
                     <div class="row custom-card d-flex align-items-start">
                         <div class="col-lg-7 col-md-7 col-8">
-                            <p class="card-title">Shelter in your area</p>
+                            <p class="card-title">Total user</p>
                             <p class="card-details">5</p>
-                            <p class="card-navigation">
-                                <span><i class="fa-solid fa-location-dot me-2"></i></span> See all
-                            </p>
+                            <a href="./see_users.php">
+                                <p class="card-navigation">
+                                    <span><i class="fa-solid fa-location-dot me-2"></i></span> See all
+                                </p>
+                            </a>
                         </div>
                         <div class="col-lg-5 col-md-5 col-4 d-flex justify-content-end p-0">
                             <div class="card-icon-container d-flex align-items-center justify-content-center">
