@@ -70,7 +70,7 @@
                         <img src="./global assets/img3.webp" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="./global assets/img3.webp" class="d-block w-100" alt="...">
+                        <img src="./global assets/img6.webp" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="./global assets/img2.webp" class="d-block w-100" alt="...">

@@ -32,12 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<script>window.location.href='./signin.php';</script>";
                 }
             } else {
-                echo 'Email not found!';
-            }
+                $_SESSION['status'] = "Login Unsuccessfull";
+                $_SESSION['status_code'] = "error";
+                echo "<script>window.location.href='./signin.php';</script>";            }
         } else {
             die("Query failed: " . mysqli_error($con));
         }
     } else {
-        echo 'Please provide both email and password!';
+        $_SESSION['status'] = "Login Unsuccessfull";
+        $_SESSION['status_code'] = "error";
+        echo "<script>window.location.href='./signin.php';</script>";
     }
 }

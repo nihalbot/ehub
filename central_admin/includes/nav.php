@@ -13,25 +13,37 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-lg-none">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../pages/dashboard.php">Dashboard</a>
+                        <a class="nav-link active" aria-current="page" href="../pages/dashboard.php">
+                            <i class="fa-solid fa-house me-2"></i>
+                            Dashboard
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/add_user.php">Add Admin</a>
+                        <a class="nav-link" href="../pages/add_user.php">
+                            <i class="fa-solid fa-user-pen"></i>
+                            Add Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/add_user.php">Add User</a>
+                        <a class="nav-link" href="../pages/add_user.php">
+                            <i class="fa-solid fa-user-large"></i>
+                            Add User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/see_users.php">See users</a>
+                        <a class="nav-link" href="../pages/see_users.php"> <i class="fa-solid fa-users"></i>
+                            See users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/shelter.php">Shelter</a>
+                        <a class="nav-link" href="../pages/shelter.php"><i class="fa-solid fa-person-shelter"></i>
+
+                            Shelter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/users_at_shelter.php">User at Shelter</a>
+                        <a class="nav-link" href="../pages/users_at_shelter.php"> <i class="fa-solid fa-people-roof"></i>
+                            User at Shelter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/logout.php">Logout</a>
+                        <a class="nav-link" href="../pages/logout.php"><i class="fa-solid fa-right-from-bracket"></i>
+                        Logout</a>
                     </li>
 
                 </ul>

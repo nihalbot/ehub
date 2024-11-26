@@ -58,6 +58,15 @@ nav {
         overflow: auto !important;
     }
 }
+@media (min-width: 701px) and (max-width: 990px) {
+    body{
+            font-size: 14px;
+
+    }
+    .sidebar-test {
+        display: none !important;
+    }
+}
 
 .form-container{
     padding-left: 1rem;

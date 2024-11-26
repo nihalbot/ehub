@@ -93,7 +93,7 @@ $result = mysqli_query($con, $sql);
                     <th class="custom-table-header" scope="col">Phone</th>
                     <th class="custom-table-header" scope="col">Role</th>
                     <th class="custom-table-header" scope="col">Region</th>
-                    <th class="custom-table-header" scope="col">Action</th>
+              
                 </tr>
             </thead>
             <tbody class="table-body">
@@ -115,16 +115,7 @@ $result = mysqli_query($con, $sql);
                             <td>' . $userPhone . '</td>
                             <td>' . $userRole . '</td>
                             <td>' . $userRegion . '</td>
-                            <td class="action-container">
-                                <span>
-                                    <a href="./update_user.php?id=' . $userId . '">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                    <a href="javascript:void(0);" onclick="confirmDelete(' . $userId . ')">
-                                        <i class="fa-solid fa-trash delete-icon"></i>
-                                    </a>
-                                </span>
-                            </td>
+                            
                         </tr>';
                     }
                 } else {

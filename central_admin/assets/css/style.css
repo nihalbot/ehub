@@ -186,10 +186,26 @@ margin-bottom: .5rem;
 
 
 @media (max-width: 700px){
+    body{
+            font-size: 14px;
+
+    }
     .table-data{
         overflow: auto !important;
     }
 }
+
+@media (min-width: 701px) and (max-width: 990px) {
+    body{
+            font-size: 14px;
+
+    }
+    .sidebar-test {
+        display: none !important;
+    }
+}
+
+
 a{
     text-decoration: none;
 }
