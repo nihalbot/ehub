@@ -1,4 +1,4 @@
-🌟 Emergency Relief Hub
+🌟 Emergency Help Hub
 
 Efficient disaster management and relief distribution at your fingertips.
 
